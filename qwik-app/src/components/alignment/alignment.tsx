@@ -113,7 +113,7 @@ export default component$(() => {
                   <div class="flex items-center">
                     <div class="flex-shrink-0">
                       <div class="form-control">
-                        <div class="cursor-pointer label text-green-50 transition-all space-x-4">
+                        <div class="cursor-pointer label transition-all space-x-4">
                           <input
                             type="checkbox"
                             checked={check.checked}
