@@ -9,57 +9,40 @@ export default component$(() => {
           checks: [
             {
               title: "You work from home most of the time",
-              checked: false,
             },
             {
-              title: "Per ei quaeque sensibus",
-              description: "Ex usu illum iudico molestie.",
-              checked: false,
+              title: "You work in front of a computer most of the day",
             },
             {
-              title: "Pro ne agam facete mediocritatem",
-              description: "Ridens labore facete mea ei.",
-              checked: false,
+              title: "You love playing video games",
             },
           ],
         },
         {
-          title: "Who are we?",
+          title: "What are the benefits of Wellness Wars?",
           checks: [
             {
-              title: "Per ei quaeque sensibus",
-              description: "Ex usu illum iudico molestie.",
-              checked: false,
+              title: "You get to have fun while improving your health significantly",
             },
             {
-              title: "Pro ne agam facete mediocritatem",
-              description: "Ridens labore facete mea ei.",
-              checked: false,
+              title: "You don’t have to motivate yourself to do healthy activities anymore",
             },
             {
-              title: "Pro id apeirian dignissim",
-              description: "Pro id apeirian dignissim.",
-              checked: false,
+              title: "You don't need to guess which activities are most effective, we tell you",
             },
           ],
         },
         {
-          title: "Who are we?",
+          title: "Why join now?",
           checks: [
             {
-              title: "Per ei quaeque sensibus",
-              description: "Ex usu illum iudico molestie.",
-              checked: false,
+              title: "The prices will increase once the app leaves its beta phase",
             },
             {
-              title: "Pro ne agam facete mediocritatem",
-              description: "Ridens labore facete mea ei.",
-              checked: false,
+              title: "You get to keep your low price even when leaving the beta",
             },
             {
-              title: "Pro id apeirian dignissim",
-              description: "Pro id apeirian dignissim.",
-              checked: false,
+              title: "The sooner you start, the faster you will feel the results",
             },
           ],
         },
@@ -73,7 +56,7 @@ export default component$(() => {
     const windowHeight = window.innerHeight;
     for (let i = 0; i < 9; i++) {
       const currentCheckbox = document.getElementById("check-" + i);
-      if (currentCheckbox && currentCheckbox?.offsetTop < scrollY + windowHeight / 3) {
+      if (currentCheckbox && currentCheckbox?.offsetTop < scrollY + windowHeight / 2.5) {
         (currentCheckbox as HTMLInputElement).checked = true;
         currentCheckbox.parentElement?.classList.add("text-gray-500", "transform", "translate-x-4");
       }
@@ -85,7 +68,7 @@ export default component$(() => {
       class="dark:bg-base-200 dark:text-gray-100"
       window:onScroll$={() => onScroll()}
     >
-      <div class="container max-w-xl p-6 py-12 mx-auto space-y-24 lg:px-8 lg:max-w-7xl">
+      <div class="container max-w-xl p-6 py-12 mx-auto space-y-16 lg:px-8 lg:max-w-7xl">
         <div>
           <h2 class="text-3xl font-bold tracking-tight text-center sm:text-5xl dark:text-gray-50">
             What you should know:
@@ -101,7 +84,7 @@ export default component$(() => {
           <div class="grid lg:gap-8 lg:grid-cols-2 lg:items-center">
             <div>
               <h3 class="text-2xl font-bold tracking-tight sm:text-3xl dark:text-gray-50">
-                Who is this for?
+                {element.title}
               </h3>
               <p class="mt-3 text-lg dark:text-gray-400" hidden>
                 Ne dicta praesent ocurreret has, diam theophrastus at pro. Eos
@@ -116,20 +99,14 @@ export default component$(() => {
                         <div class="cursor-pointer label transition-all space-x-4">
                           <input
                             type="checkbox"
-                            checked={check.checked}
                             id={`check-${i * store.content.length + index}`}
                             class="checkbox checkbox-secondary"
                           />
-                          <h4 class="text-xl sm:text-2xl font-medium leading-6">
+                          <h4 class="text-lg sm:text-xl font-medium leading-6">
                             {check.title}
                           </h4>
                         </div>
                       </div>
-                    </div>
-                    <div class="ml-4">
-                      <p class="mt-2 dark:text-gray-400" hidden>
-                        {check.description}
-                      </p>
                     </div>
                   </div>
                 </div>

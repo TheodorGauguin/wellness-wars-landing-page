@@ -46,10 +46,10 @@ export default component$(() => {
   return (
     <section class="text-orange-50">
       <div class="container mx-auto flex flex-col items-center px-4 py-16 text-center md:py-48 md:px-10 lg:px-32 xl:max-w-3xl">
-        <h1 class="text-4xl sm:text-5xl">
+        <h1 class="text-4xl sm:text-5xl mb-4">
           {headingIdeas[currentHeadingIdeaIndex].prefix}<span class="dark:text-[#44ee44] [#55ff55] font-black">{headingIdeas[currentHeadingIdeaIndex].highlighted}</span>{headingIdeas[currentHeadingIdeaIndex].suffix}
         </h1>
-        <p class="p-4 mt-8 mb-12 text-lg">
+        <p class="p-4 mb-8 text-xl">
           {subheadingIdeas[currentSubheadingIdeaIndex]}
         </p>
         <div class="flex flex-wrap justify-center space-x-4">

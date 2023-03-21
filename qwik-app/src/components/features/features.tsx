@@ -10,8 +10,8 @@ export default component$(() => {
   ];
 
   return (
-    <section class="p-4 md:p-8 dark:bg-neutral dark:text-gray-100">
-      <div class="container mx-auto p-4 my-6 space-y-2 text-center">
+    <section class="px-4 py-8 md:px-8 md:py-12 dark:bg-neutral dark:text-gray-100">
+      <div class="container mx-auto p-4 pt-0 space-y-2 text-center">
         <h2 class="text-5xl font-bold">Built for Gamers by Gamers</h2>
         <p class="dark:text-gray-400">...that struggled with their health goals too.</p>
       </div>

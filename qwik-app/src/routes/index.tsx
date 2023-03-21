@@ -20,11 +20,11 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: 'Welcome to Qwik',
+  title: 'Welcome to Wellness Wars',
   meta: [
     {
       name: 'description',
-      content: 'Qwik site description',
+      content: 'Wellness Wars is a fun and easy way to improve your health',
     },
   ],
 };

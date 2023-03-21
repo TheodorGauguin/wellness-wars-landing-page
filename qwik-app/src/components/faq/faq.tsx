@@ -55,13 +55,13 @@ export default component$(() => {
         </h2>
         <div class="grid gap-10 md:gap-8 sm:p-3 md:grid-cols-2 lg:px-12 xl:px-32">
           {qas.map((qa) => (
-            <div class="collapse">
+            <div class="collapse bg-base-100 rounded-md">
               <input type="checkbox" />
               <div class="collapse-title text-xl font-medium">
                 <h3 class="font-semibold dark:text-gray-400">{qa.question}</h3>
               </div>
               <div class="collapse-content">
-                <p class="mt-1"> {qa.answer}</p>
+                <p class="mt-1 text-lg"> {qa.answer}</p>
               </div>
             </div>
           ))}
