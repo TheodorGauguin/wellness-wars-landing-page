@@ -74,7 +74,7 @@ export default component$(() => {
     for (let i = 0; i < 9; i++) {
       const currentCheckbox = document.getElementById("check-" + i);
       if (currentCheckbox && currentCheckbox?.offsetTop < scrollY + windowHeight / 3) {
-        currentCheckbox.checked = true;
+        (currentCheckbox as HTMLInputElement).checked = true;
         currentCheckbox.parentElement?.classList.add("text-gray-500", "transform", "translate-x-4");
       }
     }
