@@ -1,0 +1,24 @@
+section {
+  position: relative;
+}
+
+section::before {
+  content: "";
+  background-image: url("../../../public/images/Rageknecht_Theo_a_beautiful_fantasy_landscape_with_a_path_Cinem_743eb2b7-44d9-4fa0-b87f-09551694b8c1.png");
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  filter: blur(4px) brightness(0.6);
+  z-index: -1;
+}
+
+h1 {
+  /*font-family: 'Cinzel Decorative', cursive;
+  line-height: 1.4;
+  font-family: 'Bona Nova', serif;*/
+  font-family: 'Crimson Text', serif;
+}
