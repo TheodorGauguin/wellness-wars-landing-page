@@ -6,7 +6,7 @@ export default component$(() => {
       content: [
         {
           title: "Is This Meant For You?",
-          imageUrl: "/public/images/A_person_working_from_home_illustration.png",
+          imageUrl: "/images/A_person_working_from_home_illustration.png",
           checks: [
             {
               title: "You are a fellow home office enjoyer 🌟🏠",
@@ -21,7 +21,7 @@ export default component$(() => {
         },
         {
           title: "Unlock the Power of Wellness Wars:",
-          imageUrl: "/public/images/happy_person_at_a_window.png",
+          imageUrl: "/images/happy_person_at_a_window.png",
           checks: [
             {
               title: "Transform your health with fun and excitement 🎉🏃‍♀️🍎",
@@ -37,7 +37,7 @@ export default component$(() => {
         },
         {
           title: "Why You Shouldn't Wait:",
-          imageUrl: "/public/images/person_running_out_of_time.png",
+          imageUrl: "/images/person_running_out_of_time.png",
           checks: [
             {
               title:
