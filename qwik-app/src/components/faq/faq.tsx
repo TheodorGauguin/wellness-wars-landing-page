@@ -46,7 +46,7 @@ export default component$(() => {
 
   return (
     <section class="dark:bg-neutral dark:text-gray-100">
-      <div class="container flex flex-col justify-center p-4 mx-auto md:p-8">
+      <div class="container flex flex-col justify-center p-8 mx-auto md:p-20">
         <p class="p-2 text-sm font-medium tracking-wider text-center uppercase">
           How it works
         </p>

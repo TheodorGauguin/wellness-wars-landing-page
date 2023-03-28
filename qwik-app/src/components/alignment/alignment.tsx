@@ -5,44 +5,50 @@ export default component$(() => {
     {
       content: [
         {
-          title: "Is This For You?",
+          title: "Is This Meant For You?",
+          imageUrl: "/public/images/A_person_working_from_home_illustration.png",
           checks: [
             {
-              title: "You work from home most of the time",
+              title: "You are a fellow home office enjoyer 🌟🏠",
             },
             {
-              title: "You work in front of a computer most of the day",
+              title: "You are reaching peak levels of screen time 💻⏳",
             },
             {
-              title: "You love playing video games",
+              title: "You are a passionate virtual Adventurer 🎮🚀",
             },
           ],
         },
         {
-          title: "What are the benefits of Wellness Wars?",
+          title: "Unlock the Power of Wellness Wars:",
+          imageUrl: "/public/images/happy_person_at_a_window.png",
           checks: [
             {
-              title: "You get to have fun while improving your health significantly",
+              title: "Transform your health with fun and excitement 🎉🏃‍♀️🍎",
             },
             {
-              title: "You don’t have to motivate yourself to do healthy activities anymore",
+              title: "Say goodbye to self-motivation struggles 💪🚀",
             },
             {
-              title: "You don't need to guess which activities are most effective, we tell you",
+              title:
+                "Effortlessly identify the most effective activities for you 🎯📈",
             },
           ],
         },
         {
-          title: "Why join now?",
+          title: "Why You Shouldn't Wait:",
+          imageUrl: "/public/images/person_running_out_of_time.png",
           checks: [
             {
-              title: "The prices will increase once the app leaves its beta phase",
+              title:
+                "Secure the best price before beta ends and prices rise 🤑💰",
             },
             {
-              title: "You get to keep your low price even when leaving the beta",
+              title: "Lock in your exclusive low price for life 💸🔒",
             },
             {
-              title: "The sooner you start, the faster you will feel the results",
+              title:
+                "Start now to experience rapid, life-changing results ⏩🏋️‍♂️💥",
             },
           ],
         },
@@ -56,9 +62,16 @@ export default component$(() => {
     const windowHeight = window.innerHeight;
     for (let i = 0; i < 9; i++) {
       const currentCheckbox = document.getElementById("check-" + i);
-      if (currentCheckbox && currentCheckbox?.offsetTop < scrollY + windowHeight / 2.5) {
+      if (
+        currentCheckbox &&
+        currentCheckbox?.offsetTop < scrollY + windowHeight / 2.5
+      ) {
         (currentCheckbox as HTMLInputElement).checked = true;
-        currentCheckbox.parentElement?.classList.add("text-gray-500", "transform", "translate-x-4");
+        currentCheckbox.parentElement?.classList.add(
+          "text-gray-500",
+          "transform",
+          "translate-x-4"
+        );
       }
     }
   });
@@ -68,7 +81,7 @@ export default component$(() => {
       class="dark:bg-base-200 dark:text-gray-100"
       window:onScroll$={() => onScroll()}
     >
-      <div class="container max-w-xl p-6 py-12 mx-auto space-y-16 lg:px-8 lg:max-w-7xl">
+      <div class="container py-8  max-w-xl p-6 md:py-20 mx-auto space-y-16 lg:px-8 lg:max-w-7xl">
         <div>
           <h2 class="text-3xl font-bold tracking-tight text-center sm:text-5xl dark:text-gray-50">
             What you should know:
@@ -117,9 +130,9 @@ export default component$(() => {
               class={`mt-10 lg:mt-0 ${i % 2 ? "lg:row-start-1" : ""}`}
             >
               <img
-                src="https://source.unsplash.com/random/360x480"
-                alt=""
-                class="mx-auto rounded-lg shadow-lg dark:bg-gray-500"
+                src={element.imageUrl}
+                alt={element.title}
+                class="mx-auto rounded-lg shadow-lg dark:bg-gray-500 h-[600px] w-[400px] object-cover"
               />
             </div>
           </div>
