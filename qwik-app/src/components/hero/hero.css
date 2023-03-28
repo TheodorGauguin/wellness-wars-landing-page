@@ -4,7 +4,7 @@ section {
 
 section::before {
   content: "";
-  background-image: url("/images/Rageknecht_Theo_a_beautiful_fantasy_landscape_with_a_path_Cinem_743eb2b7-44d9-4fa0-b87f-09551694b8c1.png");
+  background-image: url("/images/forest_path_background.png");
   background-size: cover;
   background-position: center;
   position: absolute;
