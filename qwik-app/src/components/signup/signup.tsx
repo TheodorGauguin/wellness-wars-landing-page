@@ -8,7 +8,8 @@ export default component$(() => {
 
   return (
     <div class="bg-[rgba(0,0,0,0.7)] py-6 px-8 rounded-lg w-full sm:w-96 mx-auto">
-      <form name="signup" method="POST" data-netlify="true" action="/success-signup" class="space-y-4">
+      <form name="signup" method="POST" data-netlify="true" action="/success-signup" class="space-y-4" data-netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="signup" />
         <p>
           <input type="text" name="name" placeholder="First name" class="input w-full" onInput$={(e) => store.name = (e.target as HTMLInputElement).value}/>
         </p>
