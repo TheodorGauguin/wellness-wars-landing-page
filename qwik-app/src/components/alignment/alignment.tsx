@@ -107,9 +107,9 @@ export default component$(() => {
               {element.checks.map((check, index) => (
                 <div class="mt-12 space-y-12">
                   <div class="flex items-center">
-                    <div class="flex-shrink-0">
+                    <div class="flex-shrink-0 w-full text-left">
                       <div class="form-control">
-                        <div class="cursor-pointer label transition-all space-x-4">
+                        <div class="cursor-pointer label transition-all space-x-4 justify-start">
                           <input
                             type="checkbox"
                             id={`check-${i * store.content.length + index}`}

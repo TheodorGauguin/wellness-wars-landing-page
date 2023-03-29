@@ -33,7 +33,7 @@ export default component$(() => {
               alt={feature.title}
               class="w-[80%] h-auto rounded-xl transition duration-300 transform hover:scale-105"
             />
-            <h3 class="my-4 mt-8 text-3xl font-semibold">{feature.title}</h3>
+            <h3 class="my-4 mt-8 text-3xl font-semibold text-center">{feature.title}</h3>
             <div class="space-y-1 leading-tight text-center text-xl">
               <p>{feature.description}</p>
             </div>
