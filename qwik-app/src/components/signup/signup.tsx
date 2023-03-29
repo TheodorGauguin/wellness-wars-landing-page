@@ -8,12 +8,15 @@ export default component$(() => {
 
   const handleSubmit = $((e: any) => {
     const request: any = { "form-name": "signup", ...store };
+    const requestEncoded: any = Object.keys(request).map(key => encodeURIComponent(key) + "=" + encodeURIComponent(request[key])).join("&");
+    console.log(request)
+    console.log(requestEncoded)
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: Object.keys(request).map(key => encodeURIComponent(key) + "=" + encodeURIComponent(request[key])).join("&")
+      body: requestEncoded
     })
-      .then(() => alert("Success!"))
+      .then(() => window.location.href = "/success-signup")
       .catch(error => alert(error));
 
     e.preventDefault();
@@ -21,7 +24,7 @@ export default component$(() => {
 
   return (
     <div class="bg-[rgba(0,0,0,0.7)] py-6 px-8 rounded-lg w-full sm:w-96 mx-auto">
-      <form netlify-data="true" method="POST" action="/success-signup" class="space-y-4" onSubmit$={(e) => handleSubmit(e)}>
+      <form netlify-data="true" name="signup" method="POST" class="space-y-4" onSubmit$={(e) => handleSubmit(e)}>
         <p>
           <input type="text" name="name" placeholder="First name" class="input w-full" onInput$={(e) => store.name = (e.target as HTMLInputElement).value}/>
         </p>
