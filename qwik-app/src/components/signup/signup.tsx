@@ -1,4 +1,4 @@
-import { component$, useStore } from "@builder.io/qwik";
+import { component$, useStore, $ } from "@builder.io/qwik";
 
 export default component$(() => {
   const store = useStore({
@@ -6,10 +6,22 @@ export default component$(() => {
     email: ""
   })
 
+  const handleSubmit = $((e: any) => {
+    const request: any = { "form-name": "signup", ...store };
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: Object.keys(request).map(key => encodeURIComponent(key) + "=" + encodeURIComponent(request[key])).join("&")
+    })
+      .then(() => alert("Success!"))
+      .catch(error => alert(error));
+
+    e.preventDefault();
+  })
+
   return (
     <div class="bg-[rgba(0,0,0,0.7)] py-6 px-8 rounded-lg w-full sm:w-96 mx-auto">
-      <form name="signup" method="POST" data-netlify="true" action="/success-signup" class="space-y-4" data-netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="signup" />
+      <form netlify-data="true" method="POST" action="/success-signup" class="space-y-4" onSubmit$={(e) => handleSubmit(e)}>
         <p>
           <input type="text" name="name" placeholder="First name" class="input w-full" onInput$={(e) => store.name = (e.target as HTMLInputElement).value}/>
         </p>
