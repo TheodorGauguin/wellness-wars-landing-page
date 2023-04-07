@@ -9,13 +9,13 @@ export default component$(() => {
           imageUrl: "/images/A_person_working_from_home_illustration.png",
           checks: [
             {
-              title: "You are a fellow home office enjoyer 🌟🏠",
+              title: "You work from home most of the time",
             },
             {
-              title: "You are reaching peak levels of screen time 💻⏳",
+              title: "You spend most of your time in front of a screen",
             },
             {
-              title: "You are a passionate virtual Adventurer 🎮🚀",
+              title: "You love playing video games",
             },
           ],
         },
@@ -24,14 +24,14 @@ export default component$(() => {
           imageUrl: "/images/happy_person_at_a_window.png",
           checks: [
             {
-              title: "Transform your health with fun and excitement 🎉🏃‍♀️🍎",
+              title: "Transform your health while gaming",
             },
             {
-              title: "Say goodbye to self-motivation struggles 💪🚀",
+              title: "Say goodbye to self-motivation struggles ",
             },
             {
               title:
-                "Effortlessly identify the most effective activities for you 🎯📈",
+                "Only do what is proven to be most effective and stop wasting time and energy on subpar exercises",
             },
           ],
         },
@@ -40,15 +40,13 @@ export default component$(() => {
           imageUrl: "/images/person_running_out_of_time.png",
           checks: [
             {
-              title:
-                "Secure the best price before beta ends and prices rise 🤑💰",
+              title: "Secure the best price before beta ends and prices rise",
             },
             {
-              title: "Lock in your exclusive low price for life 💸🔒",
+              title: "Lock in your exclusive low price for life",
             },
             {
-              title:
-                "Start now to experience rapid, life-changing results ⏩🏋️‍♂️💥",
+              title: "Start now to experience rapid, life-changing results",
             },
           ],
         },
@@ -64,26 +62,35 @@ export default component$(() => {
       const currentCheckbox = document.getElementById("check-" + i);
       if (
         currentCheckbox &&
-        currentCheckbox?.offsetTop < scrollY + windowHeight / 2.5
+        currentCheckbox?.offsetTop < scrollY + windowHeight / 2.3
       ) {
-        (currentCheckbox as HTMLInputElement).checked = true;
-        currentCheckbox.parentElement?.classList.add(
-          "text-gray-500",
+        currentCheckbox.classList.remove(
+          "bg-neutral",
+          "from-neutral",
+          "to-neutral",
+          "p-0"
+        );
+        currentCheckbox.classList.add(
+          "dark:text-neutral-500",
           "transform",
-          "translate-x-4"
+          "scale-95",
+          "from-[#52f7d4]",
+          "to-[#faf597]",
+          "text-neutral",
+          "p-[2px]"
         );
       }
     }
   });
 
   return (
-    <section
-      class="dark:bg-base-200 dark:text-gray-100"
-      window:onScroll$={() => onScroll()}
-    >
-      <div class="container py-8  max-w-xl p-6 md:py-20 mx-auto space-y-16 lg:px-8 lg:max-w-7xl">
+    <section class="" window:onScroll$={() => onScroll()}>
+      <div class="container p-6 mx-auto mt-12 lg:px-8 lg:max-w-7xl">
         <div>
-          <h2 class="text-3xl font-bold tracking-tight text-center sm:text-5xl dark:text-gray-50">
+          <h2
+            class="text-3xl font-bold tracking-tight text-center sm:text-5xl dark:text-gray-50"
+            hidden
+          >
             What you should know:
           </h2>
           <p
@@ -94,9 +101,9 @@ export default component$(() => {
           </p>
         </div>
         {store.content.map((element, i) => (
-          <div class="grid lg:gap-8 lg:grid-cols-2 lg:items-center">
+          <div class="grid mb-32 lg:gap-8 lg:grid-cols-2 lg:items-center">
             <div>
-              <h3 class="text-2xl font-bold tracking-tight sm:text-3xl dark:text-gray-50">
+              <h3 class="text-3xl font-bold tracking-tight sm:text-4xl dark:text-gray-50">
                 {element.title}
               </h3>
               <p class="mt-3 text-lg dark:text-gray-400" hidden>
@@ -108,14 +115,12 @@ export default component$(() => {
                 <div class="mt-12 space-y-12">
                   <div class="flex items-center">
                     <div class="flex-shrink-0 w-full text-left">
-                      <div class="form-control">
-                        <div class="cursor-pointer label transition-all space-x-4 justify-start">
-                          <input
-                            type="checkbox"
-                            id={`check-${i * store.content.length + index}`}
-                            class="checkbox checkbox-secondary"
-                          />
-                          <h4 class="text-lg sm:text-xl font-medium leading-6">
+                      <div
+                        id={`check-${i * store.content.length + index}`}
+                        class="form-control transition-all p-0 bg-red-400 clip clip-sm cursor-pointer space-x-4 justify-start bg-gradient-to-r from-neutral to-neutral text-[#ffffff]"
+                      >
+                        <div class="rounded-none p-8 clip clip-sm bg-neutral">
+                          <h4 class="text-xl sm:text-2xl font-medium leading-6">
                             {check.title}
                           </h4>
                         </div>
@@ -137,6 +142,19 @@ export default component$(() => {
             </div>
           </div>
         ))}
+      </div>
+      {/* Add a header with a call to action button */}
+      <div class="container lg:max-w-7xl mx-auto mb-32 flex flex-col items-center">
+        <h2 class="text-4xl md:text-5xl font-bold text-white m-4 mb-16">
+          Achieve the Unthinkable with{" "}
+          <span class="bg-gradient-to-r from-[#78eaa0] to-[#e2da72] bg-clip-text text-transparent">
+            Wellness Wars
+          </span>{" "}
+          - Register and Begin Your Journey!
+        </h2>
+        <button class="btn btn-lg clip clip-sm bg-gradient-to-r from-[#52f7d4] to-[#faf597] rounded-none text-[#1b2220] w-fit">
+          Register Now
+        </button>
       </div>
     </section>
   );

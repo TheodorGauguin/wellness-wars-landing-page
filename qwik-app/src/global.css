@@ -5,3 +5,15 @@
 body {
   font-family: 'Bona Nova', serif;
 }
+
+.clip-sm {
+  --clip: 20px;
+}
+
+.clip-md {
+  --clip: 30px;
+}
+
+.clip {
+  clip-path: polygon(var(--clip) 0%, 100% 0, 100% calc(100% - var(--clip)), calc(100% - var(--clip)) 100%, 0 100%, 0 var(--clip));
+}

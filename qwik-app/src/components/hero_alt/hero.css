@@ -1,0 +1,43 @@
+.hero-container {
+  background: rgb(42,101,55);
+  background: linear-gradient(128deg, #234d2d 0%, #1c2220 33%, #1c2220 66%, #4e2935 100%);    
+}
+
+img.vert-move {
+  -webkit-animation-name: mover;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-name: mover;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+
+.anim-delay-300 {
+  -webkit-animation-delay: 300ms;
+  animation-delay: 300ms;
+}
+
+.anim-delay-600 {
+  -webkit-animation-delay: 600ms;
+  animation-delay: 600ms;
+}
+
+.transition-transform-filter {
+  transition-property: transform, filter;
+  transition-timing-function: ease-out;
+  transition-duration: 1000ms;
+}
+
+@-webkit-keyframes mover {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+
+@keyframes mover {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}

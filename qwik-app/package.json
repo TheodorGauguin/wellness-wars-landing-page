@@ -44,6 +44,7 @@
     "vite-tsconfig-paths": "3.5.0"
   },
   "dependencies": {
+    "@sendinblue/client": "^3.3.1",
     "daisyui": "^2.51.3"
   }
 }

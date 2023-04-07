@@ -55,6 +55,8 @@ export default component$(() => {
 
   const joinBetaClicked = useSignal(false);
 
+  
+
   return (
     <section id="hero" class="text-orange-50">
       <div class="container mx-auto flex flex-col items-center px-4 py-16 text-center md:py-48 md:pb-24 md:px-10 lg:px-32 xl:max-w-3xl">
