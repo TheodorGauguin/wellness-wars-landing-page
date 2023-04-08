@@ -12,7 +12,7 @@ export default component$(() => {
 
     const apiInstance = new SibApiV3Sdk.ContactsApi()
     
-    apiInstance.setApiKey(SibApiV3Sdk.ContactsApiApiKeys.apiKey, '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')
+    apiInstance.setApiKey(SibApiV3Sdk.ContactsApiApiKeys.apiKey, '')
 
     apiInstance.createContact({ email: store.email, attributes: { FIRSTNAME: store.name, LASTNAME: "", SMS: "" }, updateEnabled: true, listIds: [2] }).then((data) => {
       console.log('API called successfully. Returned data: ' + JSON.stringify(data));
